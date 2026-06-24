@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: development-plan
+
+# specify what kind of notification type is used email/sms
+notification:
+  service: email
