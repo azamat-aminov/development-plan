@@ -1,7 +1,29 @@
 spring:
   application:
     name: development-plan
+  datasource:
+    url: jdbc:postgresql://localhost:5432/deep_dive
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 5
+      maximum-pool-size: 10
+      idle-timeout: 5000
+      max-lifetime: 60000
+      auto-commit: true
 
-# specify what kind of notification type is used email/sms
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate.transaction.jta.platform: org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform
+    open-in-view: false
+
+# Optional if using SpringDoc OpenAPI
+springdoc:
+  api-docs:
+    path: /v3/api-docs
 notification:
-  service: email
+  service: sms
