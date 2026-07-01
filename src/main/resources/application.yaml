@@ -27,3 +27,18 @@ springdoc:
     path: /v3/api-docs
 notification:
   service: sms
+
+# resilience4j properties
+#resilience4j:
+#  retry:
+#    instances:
+#      orderServiceRetry:
+#        max-attempts: 3                  # Total attempts (1 initial call + 2 retries)
+#        wait-duration: 2s                # Wait time between attempts
+#        enable-exponential-backoff: true # Progressively increase wait time
+#        exponential-backoff-multiplier: 2 # wait-duration doubles each retry (2s, 4s...)
+#        retry-exceptions:                # Only retry on transient/network errors
+#          - java.io.IOException
+#          - org.springframework.web.client.HttpServerErrorException
+#        ignore-exceptions:               # Fail fast on business errors
+#          - java.lang.IllegalArgumentException

@@ -9,6 +9,7 @@ import com.dev.development.plan.hateoas.entity.Order;
 import com.dev.development.plan.hateoas.model.CreateOrderRequest;
 import com.dev.development.plan.hateoas.model.OrderResponse;
 import com.dev.development.plan.hateoas.service.OrderService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import java.util.Optional;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/orders")
+@Tag(name = "Order Service", description = "Order service for practicing Spring HATEOAS.")
 public class OrderController {
 
   private final OrderService service;
